@@ -4,6 +4,7 @@ import Photo from "@/components/ui/Photo";
 import Involvement from "@/components/sections/Involvement";
 import Partners from "@/components/sections/Partners";
 import FinalCta from "@/components/sections/FinalCta";
+import { pullQuote } from "@/lib/copy";
 
 export const metadata: Metadata = {
   title: "Get Involved — My Journey Inc.",
@@ -20,7 +21,6 @@ export default function GetInvolvedPage() {
           <Photo
             src="/photos/eku-doorstep.jpg"
             alt="Volunteers kneeling at a doorstep to unpack supplies for an elderly resident, Eku outreach"
-            caption="Door to door · Eku outreach, December 2025"
             aspect="aspect-[3/4]"
             sizes="(min-width: 640px) 45vw, 100vw"
             priority
@@ -28,7 +28,6 @@ export default function GetInvolvedPage() {
           <Photo
             src="/photos/eku-rice.jpg"
             alt="Volunteers loading a sack of rice onto a motorcycle during the Eku outreach"
-            caption="Supplies moving out · Eku outreach, December 2025"
             aspect="aspect-[3/4]"
             sizes="(min-width: 640px) 45vw, 100vw"
             priority
@@ -37,7 +36,6 @@ export default function GetInvolvedPage() {
         <Photo
           src="/photos/eku-team.jpg"
           alt="The MJI outreach team with children of Eku village after the December 2025 outreach"
-          caption="The outreach team with children of Eku · December 2025"
           width={1920}
           height={1080}
           sizes="(min-width: 1400px) 1320px, 100vw"
@@ -45,6 +43,23 @@ export default function GetInvolvedPage() {
         />
       </div>
       <Involvement />
+      {/* Single pull-quote — a member testimony, used only here. */}
+      <section data-theme="dark" className="bg-bg">
+        <figure className="relative mx-auto max-w-4xl px-6 py-28 md:px-10 md:py-36">
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute left-4 top-12 select-none font-display text-[9rem] leading-none text-ghost md:left-6"
+          >
+            “
+          </span>
+          <blockquote className="relative font-display text-display-md italic leading-snug text-fg">
+            {pullQuote.quote}
+          </blockquote>
+          <figcaption className="mt-8 text-label uppercase tracking-[0.14em] text-muted">
+            — {pullQuote.name} · {pullQuote.role}, {pullQuote.date}
+          </figcaption>
+        </figure>
+      </section>
       <Partners />
       <FinalCta />
     </main>

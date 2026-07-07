@@ -134,12 +134,44 @@ export const socialProof = {
   chapters: "PTI Warri · DELSU Abraka · DELSU Oleh · Abeokuta · Lagos",
   fieldNote:
     "In Igun Village, volunteers went door to door, speaking Urhobo, helping elderly residents fetch water and praying with them one by one. One elderly man told the team they were his first visitors of the entire festive season. That’s the work: presence, not just provisions.",
-  testimonialPlaceholders: [
-    "Book Club member — on reading culture",
-    "Discipleship member — on character",
-    "Outreach volunteer — on impact",
-  ],
 };
+
+/**
+ * Real member testimonies, quoted from documents supplied by MJI
+ * (January 2025). Excerpted for length; spelling lightly normalized;
+ * wording otherwise untouched. Each testimony appears once on the site.
+ */
+export const testimonials = [
+  {
+    quote:
+      "During our 2nd quarter retreat, we were encouraged to identify a specific need and commit it to prayer. I prayed for a laptop — and in early December, I received the funds to purchase one. I am overflowing with gratitude to God and MJI.",
+    name: "Akingboye Esther Eniola",
+    role: "Member",
+    date: "January 2025",
+  },
+  {
+    quote:
+      "He took me to the place and called the lady in charge — that's how I was able to submit my IT letter after they had closed, and they said they would call me for the test.",
+    name: "Ini Jacob",
+    role: "Member — on his industrial training placement",
+    date: "January 2025",
+  },
+  {
+    quote:
+      "Despite not having the funds for a retreat I planned to attend, God miraculously provided for my transportation costs. This is just the beginning of my season of dominion.",
+    name: "Azemobor Goodluck",
+    role: "Member",
+    date: "January 2025",
+  },
+] as const;
+
+export const pullQuote = {
+  quote:
+    "Within the week after we arrived back from the retreat, incredible things have been happening.",
+  name: "Chuks Romaine",
+  role: "Member",
+  date: "January 2025",
+} as const;
 
 export const partners = {
   headline: "Trusted by the institutions shaping young Nigerians.",

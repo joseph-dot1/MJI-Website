@@ -21,7 +21,6 @@ export default function HowItWorksPage() {
         <Photo
           src="/photos/conference-books.jpg"
           alt="Stacks of leadership and personal development books on the Book Club table at the 3F Conference"
-          caption="The Book Club table · 3F Conference 2025"
           aspect="aspect-[4/3]"
           sizes="(min-width: 768px) 30vw, 100vw"
           priority
@@ -29,7 +28,6 @@ export default function HowItWorksPage() {
         <Photo
           src="/photos/conference-speaker.jpg"
           alt="Damilola Emmanuel, MJI President, speaking at the lectern during the 3F Conference"
-          caption="Damilola Emmanuel, President · 3F Conference 2025"
           aspect="aspect-[4/3]"
           sizes="(min-width: 768px) 30vw, 100vw"
           priority
@@ -37,7 +35,6 @@ export default function HowItWorksPage() {
         <Photo
           src="/photos/conference-audience.jpg"
           alt="Young people in the audience at the 3F Conference, one hand raised with a question"
-          caption="Questions from the floor · 3F Conference 2025"
           aspect="aspect-[4/3]"
           sizes="(min-width: 768px) 30vw, 100vw"
           priority

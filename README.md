@@ -39,16 +39,15 @@ node scripts/generate-points.mjs path/to/NGA.geo.json
 # emits src/components/constellation/nigeria-points.json + public/constellation.svg
 ```
 
-## Before launch (placeholders in the build)
+## Before launch (remaining)
 
-1. Three real testimonials (one per branch) — replace the dashed
-   "AWAITING REAL CONTENT" blocks in `src/components/sections/SocialProof.tsx`.
-2. Real partner logos (grayscale) in the Partners marquee once confirmed.
-3. Wire the registration form (`src/app/register/RegisterForm.tsx`) to a
+1. Real partner logos (grayscale) in the Partners marquee once confirmed.
+2. Wire the registration form (`src/app/register/RegisterForm.tsx`) to a
    backend/form service — submit is a marked TODO.
-4. Real social profile URLs in `src/components/layout/Footer.tsx`.
-5. Real member/outreach photography (black & white treatment) as it becomes
-   available.
+3. Real social profile URLs in `src/components/layout/Footer.tsx`.
+4. Optional: branch-specific testimonials (Book Club / Outreach) to
+   complement the member testimonies in `src/lib/copy.ts` — five video
+   testimonies also exist in the org's Drive if a video block is ever wanted.
 
 ## Deploy (Vercel)
 

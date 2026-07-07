@@ -1,9 +1,8 @@
 "use client";
 
 import { gsap, useSectionAnimation, revealChildren } from "@/lib/gsap";
-import { socialProof } from "@/lib/copy";
+import { socialProof, testimonials } from "@/lib/copy";
 import CountUp from "@/components/ui/CountUp";
-import Placeholder from "@/components/ui/Placeholder";
 import Photo from "@/components/ui/Photo";
 
 function FieldNote() {
@@ -51,7 +50,6 @@ function FieldNote() {
       <Photo
         src="/photos/eku-elder.jpg"
         alt="A volunteer kneels beside an elderly woman in her home during the Eku outreach, December 2025"
-        caption="Presence, not just provisions · Eku, December 2025"
         width={720}
         height={1280}
         sizes="(min-width: 1024px) 30vw, 80vw"
@@ -97,19 +95,29 @@ export default function SocialProof() {
 
         <FieldNote />
 
-        {/* Testimonials: structure only — real quotes collected before launch. */}
-        <div className="grid gap-6 lg:grid-cols-3">
-          {socialProof.testimonialPlaceholders.map((t) => (
-            <Placeholder key={t} className="gsap-reveal">
-              <blockquote className="font-display text-lg italic text-muted">
-                “1–2 sentences, specific outcome, not generic praise.”
-              </blockquote>
-              <p className="mt-6 text-label uppercase tracking-[0.14em] text-muted">
-                — Full Name, Member, [Chapter] Chapter
-              </p>
-              <p className="mt-2 text-xs text-muted">{t}</p>
-            </Placeholder>
-          ))}
+        {/* Real member testimonies — supplied January 2025, each used once. */}
+        <div className="border-t border-rule pt-16">
+          <p className="gsap-reveal text-eyebrow uppercase text-muted">
+            Testimonies from our members
+          </p>
+          <div className="mt-12 grid gap-14 lg:grid-cols-3 lg:gap-10">
+            {testimonials.map((t) => (
+              <figure key={t.name} className="gsap-reveal relative">
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -top-10 left-0 select-none font-display text-[7rem] leading-none text-ghost"
+                >
+                  “
+                </span>
+                <blockquote className="relative font-display text-xl italic leading-relaxed text-body md:text-2xl">
+                  {t.quote}
+                </blockquote>
+                <figcaption className="mt-6 text-label uppercase tracking-[0.14em] text-muted">
+                  — {t.name} · {t.role}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
       </div>
     </section>
