@@ -9,6 +9,13 @@ const SOCIALS = [
   { name: "Telegram", href: "#" },
 ];
 
+const PAGES = [
+  { name: "About us", href: "/about" },
+  { name: "How it works", href: "/how-it-works" },
+  { name: "Get involved", href: "/get-involved" },
+  { name: "Register", href: "/register" },
+];
+
 export default function Footer() {
   return (
     <footer data-theme="dark" className="bg-bg text-body">
@@ -22,16 +29,32 @@ export default function Footer() {
               Discover Purpose. Develop Capacity. Transform Society.
             </p>
           </div>
-          <nav aria-label="Footer" className="flex flex-wrap gap-x-8 gap-y-3">
-            {SOCIALS.map((s) => (
-              <a
-                key={s.name}
-                href={s.href}
-                className="draw-link text-label uppercase tracking-[0.14em] text-muted hover:text-fg"
-              >
-                {s.name}
-              </a>
-            ))}
+          <nav
+            aria-label="Footer"
+            className="flex flex-col gap-3 sm:items-end"
+          >
+            <div className="flex flex-wrap gap-x-8 gap-y-3">
+              {PAGES.map((p) => (
+                <Link
+                  key={p.name}
+                  href={p.href}
+                  className="draw-link text-label uppercase tracking-[0.14em] text-body hover:text-fg"
+                >
+                  {p.name}
+                </Link>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-x-8 gap-y-3">
+              {SOCIALS.map((s) => (
+                <a
+                  key={s.name}
+                  href={s.href}
+                  className="draw-link text-label uppercase tracking-[0.14em] text-muted hover:text-fg"
+                >
+                  {s.name}
+                </a>
+              ))}
+            </div>
           </nav>
         </div>
         <div className="mt-12 flex flex-col gap-3 border-t border-rule pt-6 text-xs text-muted sm:flex-row sm:justify-between">

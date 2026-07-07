@@ -34,18 +34,24 @@ export default function Header() {
           My Journey Inc.
         </Link>
         <nav aria-label="Primary" className="flex items-center gap-8">
-          <a
-            href="#how-to-join"
+          <Link
+            href="/about"
+            className="draw-link hidden text-label uppercase tracking-[0.14em] text-paper md:inline"
+          >
+            About us
+          </Link>
+          <Link
+            href="/how-it-works"
             className="draw-link hidden text-label uppercase tracking-[0.14em] text-paper sm:inline"
           >
             How it works
-          </a>
-          <a
-            href="#get-involved"
+          </Link>
+          <Link
+            href="/get-involved"
             className="draw-link hidden text-label uppercase tracking-[0.14em] text-paper md:inline"
           >
             Get involved
-          </a>
+          </Link>
           <Link
             href="/register"
             className="bg-paper px-5 py-2.5 text-label uppercase tracking-[0.14em] text-ink transition-opacity duration-200 hover:opacity-80"
