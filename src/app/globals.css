@@ -1,0 +1,260 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------ */
+/* Semantic tokens. Sections opt into inversion with data-theme="dark" */
+/* — elements only ever reference these variables, so section-level    */
+/* and element-level styles can never fight over literal colors.       */
+/* ------------------------------------------------------------------ */
+:root,
+[data-theme="light"] {
+  --bg: #ffffff;
+  --fg: #000000;
+  --fg-body: #1a1a1a;
+  /* #757575 holds 4.6:1 on white; the lighter #8a8a8a is reserved for dark
+     sections where it reads 5.3:1. */
+  --muted: #757575;
+  --rule: #e4e4e4;
+  --ghost: #f0f0f0;
+}
+
+[data-theme="dark"] {
+  --bg: #000000;
+  --fg: #ffffff;
+  --fg-body: #eaeaea;
+  --muted: #8a8a8a;
+  --rule: #2a2a2a;
+  --ghost: #1c1c1c;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+::selection {
+  background: #000;
+  color: #fff;
+}
+[data-theme="dark"] ::selection {
+  background: #fff;
+  color: #000;
+}
+
+/* Visible focus everywhere, monochrome. */
+:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 3px;
+}
+
+/* Inside the difference-blended header, white outlines invert correctly
+   against any backdrop; a black outline would vanish. */
+.blend-header :focus-visible {
+  outline-color: #fff;
+}
+
+/* ------------------------------------------------------------------ */
+/* Motion primitives                                                    */
+/* ------------------------------------------------------------------ */
+
+/* Masked line reveal: JS animates .mask-line > span from 110% to 0.    */
+.mask-line {
+  display: block;
+  overflow: hidden;
+}
+.mask-line > span {
+  display: block;
+  will-change: transform;
+}
+
+/* Pre-hidden until GSAP takes over; if JS never arrives, a no-js       */
+/* fallback (set in layout) keeps everything visible.                   */
+.js .gsap-reveal {
+  opacity: 0;
+}
+.js .mask-line > span {
+  transform: translateY(110%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .gsap-reveal {
+    opacity: 1;
+  }
+  .js .mask-line > span {
+    transform: none;
+  }
+}
+
+/* Hero entrance is pure CSS: it starts at first paint (fast LCP), runs
+   without JS, and GSAP is never on the hero's critical path. */
+.hero-entrance .mask-line {
+  --rise-delay: 0.1s;
+}
+.hero-entrance .mask-line + .mask-line {
+  --rise-delay: 0.22s;
+}
+.hero-entrance .mask-line > span {
+  transform: translateY(110%);
+  animation: line-rise 0.9s cubic-bezier(0.215, 0.61, 0.355, 1) var(--rise-delay) forwards;
+}
+.hero-fade {
+  opacity: 0;
+  animation: fade-up 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) 0.55s forwards;
+}
+@keyframes line-rise {
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-entrance .mask-line > span {
+    animation: none;
+    transform: none;
+  }
+  .hero-fade {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* Marquee — CSS-driven, pauses on hover/focus, off under reduced motion. */
+.marquee {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+}
+.marquee-track {
+  display: flex;
+  flex-shrink: 0;
+  min-width: 100%;
+  justify-content: space-around;
+  gap: 4rem;
+  animation: marquee 60s linear infinite;
+}
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(calc(-100% - 4rem));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+/* Link underline that draws in from the left. */
+.draw-link {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  padding-bottom: 2px;
+}
+.draw-link:hover,
+.draw-link:focus-visible {
+  background-size: 100% 1px;
+}
+
+/* Button fill sweep. */
+.btn-solid {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: color 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.btn-solid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--btn-sweep, #fff);
+  transform: translateY(101%);
+  transition: transform 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.btn-solid:hover::after,
+.btn-solid:focus-visible::after {
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-solid::after {
+    transition: none;
+  }
+}
+
+/* Fixed-width digit slots — Playfair has no tabular figures, so count- */
+/* ups sit each digit in its own slot to avoid width jitter.            */
+.digit-slot {
+  display: inline-block;
+  width: 0.58em;
+  text-align: center;
+}
+
+/* Values grid cell inversion. */
+.value-cell {
+  background: var(--bg);
+  transition: background 0.15s linear, color 0.15s linear;
+}
+.value-cell:hover {
+  background: var(--fg);
+  color: var(--bg);
+}
+.value-cell:hover .value-muted {
+  color: var(--bg);
+  opacity: 0.75;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Placeholder awaiting real content — must be unmistakably unshippable. */
+.awaiting {
+  border: 1.5px dashed #8a8a8a;
+  position: relative;
+}
+.awaiting::before {
+  content: "AWAITING REAL CONTENT";
+  position: absolute;
+  top: -0.55rem;
+  left: 1rem;
+  padding: 0 0.5rem;
+  background: var(--bg);
+  color: #8a8a8a;
+  font-family: var(--font-text);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
