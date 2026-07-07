@@ -179,7 +179,9 @@ body {
   padding-bottom: 2px;
 }
 .draw-link:hover,
-.draw-link:focus-visible {
+.draw-link:focus-visible,
+.group:hover .draw-link,
+.group:focus-visible .draw-link {
   background-size: 100% 1px;
 }
 

@@ -1,30 +1,20 @@
 import Hero from "@/components/sections/Hero";
 import Problem from "@/components/sections/Problem";
-import Branches from "@/components/sections/Branches";
-import OutcomesStrip from "@/components/sections/OutcomesStrip";
-import HowToJoin from "@/components/sections/HowToJoin";
-import Values from "@/components/sections/Values";
-import WhoItsFor from "@/components/sections/WhoItsFor";
-import SocialProof from "@/components/sections/SocialProof";
-import Partners from "@/components/sections/Partners";
-import Involvement from "@/components/sections/Involvement";
-import Faq from "@/components/sections/Faq";
+import Pathways from "@/components/sections/Pathways";
 import FinalCta from "@/components/sections/FinalCta";
 
+/**
+ * The homepage is a short, visual conversion page: the constellation hero,
+ * the problem inversion, three photo-led doors into the site, and the
+ * closing CTA. The full sections live on /how-it-works, /about, and
+ * /get-involved.
+ */
 export default function Home() {
   return (
     <main id="main">
       <Hero />
       <Problem />
-      <Branches />
-      <OutcomesStrip />
-      <HowToJoin />
-      <Values />
-      <WhoItsFor />
-      <SocialProof />
-      <Partners />
-      <Involvement />
-      <Faq />
+      <Pathways />
       <FinalCta />
     </main>
   );

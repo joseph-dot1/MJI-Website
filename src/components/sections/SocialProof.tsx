@@ -4,6 +4,7 @@ import { gsap, useSectionAnimation, revealChildren } from "@/lib/gsap";
 import { socialProof } from "@/lib/copy";
 import CountUp from "@/components/ui/CountUp";
 import Placeholder from "@/components/ui/Placeholder";
+import Photo from "@/components/ui/Photo";
 
 function FieldNote() {
   const words = socialProof.fieldNote.split(" ");
@@ -27,21 +28,35 @@ function FieldNote() {
   });
 
   return (
-    <div ref={ref} className="mx-auto max-w-4xl py-24 md:py-32">
-      <p className="sr-only">{socialProof.fieldNote}</p>
-      <p
-        aria-hidden="true"
-        className="font-display text-display-md italic leading-snug text-fg"
-      >
-        {words.map((w, i) => (
-          <span key={i} data-word>
-            {w}{" "}
-          </span>
-        ))}
-      </p>
-      <p className="mt-8 text-eyebrow uppercase text-muted">
-        Field note — Igun Village, 2025 outreach report
-      </p>
+    <div
+      ref={ref}
+      className="grid items-center gap-12 py-24 md:py-32 lg:grid-cols-[1.3fr,1fr] lg:gap-20"
+    >
+      <div>
+        <p className="sr-only">{socialProof.fieldNote}</p>
+        <p
+          aria-hidden="true"
+          className="font-display text-display-md italic leading-snug text-fg"
+        >
+          {words.map((w, i) => (
+            <span key={i} data-word>
+              {w}{" "}
+            </span>
+          ))}
+        </p>
+        <p className="mt-8 text-eyebrow uppercase text-muted">
+          Field note — Igun Village, 2025 outreach report
+        </p>
+      </div>
+      <Photo
+        src="/photos/eku-elder.jpg"
+        alt="A volunteer kneels beside an elderly woman in her home during the Eku outreach, December 2025"
+        caption="Presence, not just provisions · Eku, December 2025"
+        width={720}
+        height={1280}
+        sizes="(min-width: 1024px) 30vw, 80vw"
+        className="mx-auto w-full max-w-sm"
+      />
     </div>
   );
 }
