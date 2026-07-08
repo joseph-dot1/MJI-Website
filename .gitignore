@@ -34,3 +34,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Super-resolution intermediates (regenerable from photos-src via scripts/upscale.py)
+/photos-hi/
