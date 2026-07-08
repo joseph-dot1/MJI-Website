@@ -1,9 +1,8 @@
 import Image from "next/image";
 
 /**
- * Documentary photo: grayscale treatment (brand rule — all photography is
- * B&W), hairline border, small-caps caption. Lazy by default; pass
- * priority for above-the-fold placements only.
+ * Documentary photo: hairline border, optional small-caps caption. Lazy by
+ * default; pass priority for above-the-fold placements only.
  *
  * Two layouts:
  * - intrinsic (pass width/height): renders at the image's own ratio
@@ -40,7 +39,7 @@ export default function Photo({
             fill
             sizes={sizes}
             priority={priority}
-            className="object-cover grayscale"
+            className="object-cover"
           />
         </div>
       ) : (
@@ -51,7 +50,7 @@ export default function Photo({
           height={height}
           sizes={sizes}
           priority={priority}
-          className="h-auto w-full border border-rule grayscale"
+          className="h-auto w-full border border-rule"
         />
       )}
       {caption && (

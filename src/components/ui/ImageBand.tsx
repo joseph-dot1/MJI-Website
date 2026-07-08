@@ -4,7 +4,7 @@ import Image from "next/image";
 import { gsap, useSectionAnimation } from "@/lib/gsap";
 
 /**
- * Full-bleed documentary band: edge-to-edge grayscale photo with a slow
+ * Full-bleed documentary band: edge-to-edge photo with a slow
  * internal drift scrubbed to scroll (the image is oversized and pans a few
  * percent — depth without scroll-jacking). Use at most once per page.
  */
@@ -39,7 +39,7 @@ export default function ImageBand({
         alt={alt}
         fill
         sizes="100vw"
-        className="scale-[1.14] object-cover grayscale"
+        className="scale-[1.14] object-cover"
       />
     </div>
   );

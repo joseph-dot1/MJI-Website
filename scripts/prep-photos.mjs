@@ -40,7 +40,10 @@ const PHOTOS = [
 ];
 
 for (const p of PHOTOS) {
-  const srcPath = path.join("photos-src", p.src);
+  // Prefer a super-resolved copy (photos-hi/<out>-hi.jpg) when one exists —
+  // the low-res WhatsApp sources are restored with Swin2SR before cropping.
+  const hiPath = path.join("photos-hi", `${p.out}-hi.jpg`);
+  const srcPath = fs.existsSync(hiPath) ? hiPath : path.join("photos-src", p.src);
   if (!fs.existsSync(srcPath)) {
     console.warn(`missing: ${srcPath}`);
     continue;

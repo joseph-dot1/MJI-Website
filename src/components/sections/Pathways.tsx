@@ -53,7 +53,7 @@ export default function Pathways() {
                   alt={p.alt}
                   fill
                   sizes="(min-width: 768px) 30vw, 100vw"
-                  className="object-cover grayscale transition-transform duration-700 ease-out3 group-hover:scale-[1.04]"
+                  className="object-cover transition-transform duration-700 ease-out3 group-hover:scale-[1.04]"
                 />
               </div>
               <h2 className="mt-6 font-display text-display-md text-ink">
