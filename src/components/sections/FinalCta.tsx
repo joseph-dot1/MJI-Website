@@ -77,7 +77,7 @@ export default function FinalCta() {
         </p>
         <p className="gsap-reveal mt-16">
           <Link
-            href="/register"
+            href="/partner"
             className="draw-link text-label uppercase tracking-[0.14em] text-muted hover:text-fg"
           >
             {finalCta.secondaryCta}

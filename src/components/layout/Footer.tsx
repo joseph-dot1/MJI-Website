@@ -4,7 +4,7 @@ const SOCIALS = [
   // TODO: real profile URLs before launch — per copy system notes, social
   // icons link out; follower counts are never published on the page.
   { name: "Instagram", href: "#" },
-  { name: "X (Twitter)", href: "#" },
+  { name: "Facebook", href: "#" },
   { name: "WhatsApp", href: "#" },
   { name: "Telegram", href: "#" },
 ];

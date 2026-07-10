@@ -194,6 +194,7 @@ export const involvement = {
       path: "Become a Member",
       audience: "Teens & young adults ready to grow",
       cta: "Start My Journey",
+      href: "/register",
       primary: true,
     },
     {
@@ -201,12 +202,14 @@ export const involvement = {
       audience:
         "Those ready to serve, and be developed into leaders. Every volunteer is assessed on the 4 Cs: Character, Capacity, Commitment, Consistency.",
       cta: "Apply to Volunteer",
+      href: "/volunteer",
       primary: false,
     },
     {
       path: "Partner With Us",
       audience: "Schools, churches, NGOs, brands",
       cta: "Start a Partnership",
+      href: "/partner",
       primary: false,
     },
     {
@@ -214,6 +217,7 @@ export const involvement = {
       audience:
         "Anyone who believes in the mission. Every outreach publishes a full financial report, so your giving is documented down to the receipt.",
       cta: "Give Toward Impact",
+      href: "/donate",
       primary: false,
     },
   ],

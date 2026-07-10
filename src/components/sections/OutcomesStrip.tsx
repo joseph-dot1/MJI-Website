@@ -24,18 +24,16 @@ export default function OutcomesStrip() {
         <p className="gsap-reveal mx-auto mt-6 max-w-measure text-body-lg text-ash">
           {outcomes.intro}
         </p>
-        <p className="gsap-reveal mx-auto mt-10 max-w-4xl text-eyebrow uppercase leading-loose text-ink">
-          {outcomes.list.map((o, i) => (
+        {/* Flex-wrap so the line breaks between items at any width; each
+            label stays intact (nowrap). Gap spacing separates them — no
+            trailing interpuncts hanging at line ends when they stack. */}
+        <div className="gsap-reveal mx-auto mt-10 flex max-w-4xl flex-wrap items-center justify-center gap-x-7 gap-y-3 text-eyebrow uppercase text-ink">
+          {outcomes.list.map((o) => (
             <span key={o} className="whitespace-nowrap">
               {o}
-              {i < outcomes.list.length - 1 && (
-                <span aria-hidden="true" className="mx-3 text-muted">
-                  ·
-                </span>
-              )}
             </span>
           ))}
-        </p>
+        </div>
       </div>
     </section>
   );

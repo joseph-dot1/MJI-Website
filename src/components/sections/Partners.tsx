@@ -36,7 +36,7 @@ export default function Partners() {
         <Badges hidden />
       </div>
       <div className="mx-auto max-w-site px-6 pb-32 md:px-10">
-        <Button href="/register">{partners.cta}</Button>
+        <Button href="/partner">{partners.cta}</Button>
       </div>
     </section>
   );

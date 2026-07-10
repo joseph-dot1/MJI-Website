@@ -43,12 +43,12 @@ export default function Involvement() {
                 </h3>
                 <p className="max-w-measure text-base text-ash">{row.audience}</p>
                 {row.primary ? (
-                  <Button href="/register" className="justify-self-start md:justify-self-end">
+                  <Button href={row.href} className="justify-self-start md:justify-self-end">
                     {row.cta}
                   </Button>
                 ) : (
                   <Link
-                    href="/register"
+                    href={row.href}
                     className="draw-link justify-self-start text-label uppercase tracking-[0.14em] text-ink md:justify-self-end"
                   >
                     {row.cta}
