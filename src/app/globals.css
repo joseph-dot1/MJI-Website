@@ -60,9 +60,8 @@ body {
   outline-offset: 3px;
 }
 
-/* Inside the difference-blended header, white outlines invert correctly
-   against any backdrop; a black outline would vanish. */
-.blend-header :focus-visible {
+/* The header bar is solid black — focus outlines there must be white. */
+.site-header :focus-visible {
   outline-color: #fff;
 }
 

@@ -11,23 +11,13 @@ const LINKS = [
 ];
 
 /**
- * Quiet fixed header, drawn in white with mix-blend-difference so it
- * self-inverts over every section. Below md, links collapse behind a
- * hamburger that opens a full-screen black overlay (the overlay is a
- * sibling of the blended header, so it renders solid).
+ * Fixed header with a solid black bar — always legible over every section,
+ * no blend tricks. Below md the links collapse behind a hamburger that opens
+ * a full-screen black overlay.
  */
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-
-  useEffect(() => {
-    const onScroll = () =>
-      setScrolled(window.scrollY > window.innerHeight * 0.9);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   // Close on route change; lock body scroll while open; close on Escape.
   useEffect(() => setOpen(false), [pathname]);
@@ -43,12 +33,8 @@ export default function Header() {
 
   return (
     <>
-      <header className="blend-header fixed inset-x-0 top-0 z-50 mix-blend-difference">
-        <div
-          className={`mx-auto flex h-16 max-w-site items-center justify-between border-b px-6 transition-colors duration-300 md:px-10 ${
-            scrolled && !open ? "border-paper/25" : "border-transparent"
-          }`}
-        >
+      <header className="site-header fixed inset-x-0 top-0 z-50 bg-ink">
+        <div className="mx-auto flex h-16 max-w-site items-center justify-between border-b border-paper/10 px-6 md:px-10">
           <Link
             href="/"
             className="font-display text-lg font-semibold tracking-tight text-paper"
@@ -94,7 +80,7 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Mobile overlay — solid black, outside the blend context. */}
+      {/* Mobile overlay — solid black, matches the bar. */}
       <div
         id="mobile-nav"
         className={`fixed inset-0 z-40 flex flex-col justify-center bg-ink px-6 transition-[opacity,visibility] duration-300 md:hidden ${
