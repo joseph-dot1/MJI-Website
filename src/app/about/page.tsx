@@ -9,7 +9,7 @@ import FinalCta from "@/components/sections/FinalCta";
 import { hero } from "@/lib/copy";
 
 export const metadata: Metadata = {
-  title: "About — My Journey Inc.",
+  title: "About · My Journey Inc.",
   description:
     "My Journey Inc. raises young people who think clearly, lead responsibly, and grow spiritually. Discover Purpose. Develop Capacity. Transform Society.",
 };
@@ -25,7 +25,7 @@ export default function AboutPage() {
       <div className="mx-auto max-w-site px-6 pt-8 md:px-10">
         <Photo
           src="/photos/conference-stage.jpg"
-          alt="Members on stage during MJI's 3F Conference — Final, Fatal, Failure — 2025"
+          alt="Members on stage during MJI's 3F Conference (Final, Fatal, Failure), 2025"
           width={1920}
           height={794}
           sizes="(min-width: 1400px) 1320px, 100vw"

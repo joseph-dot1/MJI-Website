@@ -29,7 +29,7 @@ const PATHS = [
     label: "Get involved",
     line: "There’s a place for you, whoever you are.",
     img: "/photos/eku-walk.jpg",
-    alt: "Volunteers walking through Eku with relief supplies, children leading the way — December 2025 outreach",
+    alt: "Volunteers walking through Eku with relief supplies, children leading the way, December 2025 outreach",
   },
 ];
 

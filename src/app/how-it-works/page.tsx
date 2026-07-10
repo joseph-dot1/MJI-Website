@@ -8,9 +8,9 @@ import Faq from "@/components/sections/Faq";
 import FinalCta from "@/components/sections/FinalCta";
 
 export const metadata: Metadata = {
-  title: "How It Works — My Journey Inc.",
+  title: "How It Works · My Journey Inc.",
   description:
-    "Every MJI member grows through three branches — Book Club, Discipleship, and Outreach. Five steps from curious to committed.",
+    "Every MJI member grows through three branches: Book Club, Discipleship, and Outreach. Five steps from curious to committed.",
 };
 
 export default function HowItWorksPage() {

@@ -7,7 +7,7 @@ import FinalCta from "@/components/sections/FinalCta";
 import { pullQuote } from "@/lib/copy";
 
 export const metadata: Metadata = {
-  title: "Get Involved — My Journey Inc.",
+  title: "Get Involved · My Journey Inc.",
   description:
     "Become a member, volunteer, partner, or donor. There's a place for you, whoever you are.",
 };
@@ -56,7 +56,7 @@ export default function GetInvolvedPage() {
             {pullQuote.quote}
           </blockquote>
           <figcaption className="mt-8 text-label uppercase tracking-[0.14em] text-muted">
-            — {pullQuote.name} · {pullQuote.role}, {pullQuote.date}
+            {pullQuote.name} · {pullQuote.role}, {pullQuote.date}
           </figcaption>
         </figure>
       </section>

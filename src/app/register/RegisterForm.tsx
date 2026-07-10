@@ -120,7 +120,7 @@ export default function RegisterForm() {
         </p>
         {attempted && (
           <p role="alert" className="awaiting mt-6 inline-block px-4 py-3 text-sm text-ash">
-            Submissions aren’t wired up yet — the registration backend is
+            Submissions aren’t wired up yet. The registration backend is
             connected before launch. (TODO)
           </p>
         )}

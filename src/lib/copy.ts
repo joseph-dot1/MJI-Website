@@ -6,7 +6,7 @@
 export const hero = {
   eyebrow: "A Youth Leadership Movement Across Nigeria",
   headlineLines: ["Purpose isn’t found.", "It’s built."],
-  sub: "My Journey Inc. raises young people who think clearly, lead responsibly, and grow spiritually — through reading, discipleship, mentorship, and hands-on service.",
+  sub: "My Journey Inc. raises young people who think clearly, lead responsibly, and grow spiritually, through reading, discipleship, mentorship, and hands-on service.",
   primaryCta: "Start My Journey",
   secondaryCta: "See how it works ↓",
   trustBar: "650+ active readers · 5 chapters across Nigeria · Ages 11–30",
@@ -15,7 +15,7 @@ export const hero = {
 export const problem = {
   eyebrow: "The Gap No One Talks About",
   headline: "Talent is everywhere. Direction isn’t.",
-  body: "Most young Nigerians aren’t short on ambition. They’re short on structure — a place that develops the mind, disciplines the character, and hands them real responsibility before “someday.”",
+  body: "Most young Nigerians aren’t short on ambition. They’re short on structure: a place that develops the mind, disciplines the character, and hands them real responsibility before “someday.”",
   scenesIntro: "Three scenes, every campus, every week:",
   scenes: [
     {
@@ -40,32 +40,32 @@ export const branches = {
   eyebrow: "How MJI Builds Leaders",
   headline:
     "Not a class you attend once. A path you walk with people who won’t let you quit.",
-  intro: "Every MJI member grows through three branches — join one, or all three.",
+  intro: "Every MJI member grows through three branches. Join one, or all three.",
   items: [
     {
       numeral: "01",
       name: "MJI Book Club",
       tagline: "Sharpen your mind.",
       body: "Weekly reading sessions, book reviews, reading challenges, and author conversations that turn scattered scrolling into structured thinking. 650+ members reading together every week.",
-      outcome: "A reading culture — and the ability to think clearly under pressure.",
+      outcome: "A reading culture, and the ability to think clearly under pressure.",
     },
     {
       numeral: "02",
       name: "MJI Discipleship Group",
       tagline: "Anchor your character.",
-      body: "Bible study, prayer, accountability groups, and one-on-one mentorship — in an intimate cohort currently 33 members deep, on purpose. Character is built in small rooms.",
+      body: "Bible study, prayer, accountability groups, and one-on-one mentorship, in an intimate cohort currently 33 members deep, on purpose. Character is built in small rooms.",
       outcome: "Character that holds when no one’s watching.",
     },
     {
       numeral: "03",
       name: "MJI Outreach",
       tagline: "Put your growth to work.",
-      body: "From door-to-door village visits in the Urhobo language to orphanage care and prison ministry — humanitarian missions that turn personal development into visible community impact. 250+ lives reached across 6 communities and facilities.",
+      body: "From door-to-door village visits in the Urhobo language to orphanage care and prison ministry: humanitarian missions that turn personal development into visible community impact. 250+ lives reached across 6 communities and facilities.",
       outcome: "Compassion in action, not theory.",
     },
   ],
   whyTitle: "Why MJI and not another youth group:",
-  why: "Most programs hand you motivation. MJI hands you a system — annual goals, weekly execution, real mentorship, and a national chapter structure that holds you accountable long after the hype fades.",
+  why: "Most programs hand you motivation. MJI hands you a system: annual goals, weekly execution, real mentorship, and a national chapter structure that holds you accountable long after the hype fades.",
 };
 
 export const outcomes = {
@@ -92,7 +92,7 @@ export const howToJoin = {
     { name: "Pick your chapter", body: "Join a local chapter or participate virtually from anywhere.", meta: "" },
     { name: "Show up", body: "Grow through Book Club, Discipleship, and Outreach at your own pace.", meta: "" },
   ],
-  cta: "Start My Journey — It’s Free",
+  cta: "Start My Journey, It’s Free",
 };
 
 export const values = {
@@ -130,7 +130,7 @@ export const socialProof = {
   verification:
     "Verified from outreach reports: 180+ persons/households across Eku, Igun & Onumane (2025); 50–55 inmates at Warri Correctional Centre (2026); 15 widows + two orphanages across Otor-Udu & Otu Jeremi (2024).",
   accountability:
-    "Every outreach publishes a full financial report. Every naira accounted for — receipts available on request.",
+    "Every outreach publishes a full financial report. Every naira accounted for. Receipts available on request.",
   chapters: "PTI Warri · DELSU Abraka · DELSU Oleh · Abeokuta · Lagos",
   fieldNote:
     "In Igun Village, volunteers went door to door, speaking Urhobo, helping elderly residents fetch water and praying with them one by one. One elderly man told the team they were his first visitors of the entire festive season. That’s the work: presence, not just provisions.",
@@ -144,16 +144,16 @@ export const socialProof = {
 export const testimonials = [
   {
     quote:
-      "During our 2nd quarter retreat, we were encouraged to identify a specific need and commit it to prayer. I prayed for a laptop — and in early December, I received the funds to purchase one. I am overflowing with gratitude to God and MJI.",
+      "During our 2nd quarter retreat, we were encouraged to identify a specific need and commit it to prayer. I prayed for a laptop, and in early December I received the funds to purchase one. I am overflowing with gratitude to God and MJI.",
     name: "Akingboye Esther Eniola",
     role: "Member",
     date: "January 2025",
   },
   {
     quote:
-      "He took me to the place and called the lady in charge — that's how I was able to submit my IT letter after they had closed, and they said they would call me for the test.",
+      "He took me to the place and called the lady in charge. That's how I was able to submit my IT letter after they had closed, and they said they would call me for the test.",
     name: "Ini Jacob",
-    role: "Member — on his industrial training placement",
+    role: "Member, on his industrial training placement",
     date: "January 2025",
   },
   {
@@ -199,7 +199,7 @@ export const involvement = {
     {
       path: "Volunteer",
       audience:
-        "Those ready to serve — and be developed into leaders. Every volunteer is assessed on the 4 Cs: Character, Capacity, Commitment, Consistency.",
+        "Those ready to serve, and be developed into leaders. Every volunteer is assessed on the 4 Cs: Character, Capacity, Commitment, Consistency.",
       cta: "Apply to Volunteer",
       primary: false,
     },
@@ -212,7 +212,7 @@ export const involvement = {
     {
       path: "Support as a Donor",
       audience:
-        "Anyone who believes in the mission. Every outreach publishes a full financial report — your giving is documented down to the receipt.",
+        "Anyone who believes in the mission. Every outreach publishes a full financial report, so your giving is documented down to the receipt.",
       cta: "Give Toward Impact",
       primary: false,
     },
@@ -224,23 +224,23 @@ export const faq = {
   items: [
     {
       q: "Is MJI a religious organization?",
-      a: "MJI is non-profit, non-political, and non-governmental. Our Discipleship branch develops spiritual maturity as one part of a whole-person model — alongside intellectual growth (Book Club) and practical service (Outreach). You choose your track.",
+      a: "MJI is non-profit, non-political, and non-governmental. Our Discipleship branch develops spiritual maturity as one part of a whole-person model, alongside intellectual growth (Book Club) and practical service (Outreach). You choose your track.",
     },
     {
       q: "Does it cost anything to join?",
       a: "Membership is free. Some events or resources may carry a small cost, always communicated in advance.",
     },
     {
-      q: "I’m a parent — is this safe for my teenager?",
+      q: "I’m a parent. Is this safe for my teenager?",
       a: "Yes. MJI operates a formal Child & Youth Protection policy: every leader and volunteer follows strict safeguarding procedures, participants are treated with dignity and respect, and every activity has clear reporting channels.",
     },
     {
       q: "There’s no chapter in my city. Can I still join?",
-      a: "Yes — MJI runs both local and virtual chapters, with active communities on WhatsApp and Telegram. Better yet, you could be the reason a chapter opens in your city.",
+      a: "Yes. MJI runs both local and virtual chapters, with active communities on WhatsApp and Telegram. Better yet, you could be the reason a chapter opens in your city.",
     },
     {
       q: "How do I start an MJI chapter?",
-      a: "Chapters follow a standardized path: Awareness → Interest → Registration → Orientation → Community Formation → Leadership Development → Official Launch — with continuous mentorship from National Leadership after launch.",
+      a: "Chapters follow a standardized path: Awareness → Interest → Registration → Orientation → Community Formation → Leadership Development → Official Launch, with continuous mentorship from National Leadership after launch.",
     },
     {
       q: "How much time does membership take?",
@@ -248,11 +248,11 @@ export const faq = {
     },
     {
       q: "Can I become a leader in MJI?",
-      a: "That’s the whole point. Leadership appointments are based on Character, Capacity, Commitment, and Consistency — and every member has a development path toward responsibility.",
+      a: "That’s the whole point. Leadership appointments are based on Character, Capacity, Commitment, and Consistency. Every member has a development path toward responsibility.",
     },
     {
       q: "Can my school, church, or organization partner with MJI?",
-      a: "Yes — MJI actively partners with schools, universities, NGOs, churches, community organizations, government agencies, and corporate organizations whose goals align with our mission.",
+      a: "Yes. MJI actively partners with schools, universities, NGOs, churches, community organizations, government agencies, and corporate organizations whose goals align with our mission.",
     },
   ],
 };
@@ -260,7 +260,7 @@ export const faq = {
 export const finalCta = {
   headlineLines: ["Your generation needs leaders.", "Be one."],
   sub: "Discover Purpose. Develop Capacity. Transform Society.",
-  primaryCta: "Start My Journey — Free",
+  primaryCta: "Start My Journey, Free",
   secondaryCta: "Partner With MJI",
   riskReversal: "No fees. No pressure. Just formation.",
 };

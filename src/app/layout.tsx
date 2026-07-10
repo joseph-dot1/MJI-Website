@@ -21,13 +21,13 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://myjourneyinc.org"),
-  title: "My Journey Inc. — Discover Purpose. Develop Capacity. Transform Society.",
+  title: "My Journey Inc. · Discover Purpose. Develop Capacity. Transform Society.",
   description:
-    "My Journey Inc. raises young people who think clearly, lead responsibly, and grow spiritually — through reading, discipleship, mentorship, and hands-on service. 650+ active readers across 5 chapters in Nigeria.",
+    "My Journey Inc. raises young people who think clearly, lead responsibly, and grow spiritually, through reading, discipleship, mentorship, and hands-on service. 650+ active readers across 5 chapters in Nigeria.",
   openGraph: {
-    title: "My Journey Inc. — Purpose isn't found. It's built.",
+    title: "My Journey Inc. · Purpose isn't found. It's built.",
     description:
-      "A youth leadership movement across Nigeria. Book Club, Discipleship, Outreach — ages 11–30.",
+      "A youth leadership movement across Nigeria. Book Club, Discipleship, Outreach, ages 11–30.",
     url: "https://myjourneyinc.org",
     siteName: "My Journey Inc.",
     locale: "en_NG",

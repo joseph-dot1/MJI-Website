@@ -44,7 +44,7 @@ function FieldNote() {
           ))}
         </p>
         <p className="mt-8 text-eyebrow uppercase text-muted">
-          Field note — Igun Village, 2025 outreach report
+          Field note · Igun Village, 2025 outreach report
         </p>
       </div>
       <Photo
@@ -113,7 +113,7 @@ export default function SocialProof() {
                   {t.quote}
                 </blockquote>
                 <figcaption className="mt-6 text-label uppercase tracking-[0.14em] text-muted">
-                  — {t.name} · {t.role}
+                  {t.name} · {t.role}
                 </figcaption>
               </figure>
             ))}
