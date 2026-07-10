@@ -168,6 +168,40 @@ body {
   }
 }
 
+/* Ticker — seamless horizontal scroll (two identical runs, translateX -50%
+   moves exactly one run width). Width-independent, so it never jumps.
+   Pauses on hover/focus. Under reduced motion it collapses to a centered
+   wrapped row instead of scrolling. */
+.ticker-wrap {
+  overflow: hidden;
+}
+.ticker {
+  display: inline-flex;
+  width: max-content;
+  animation: ticker 32s linear infinite;
+}
+.ticker-wrap:hover .ticker,
+.ticker-wrap:focus-within .ticker {
+  animation-play-state: paused;
+}
+@keyframes ticker {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: none;
+    transform: none;
+  }
+  .ticker [data-dup] {
+    display: none;
+  }
+}
+
 /* Link underline that draws in from the left. */
 .draw-link {
   background-image: linear-gradient(currentColor, currentColor);
@@ -239,6 +273,70 @@ body {
   to {
     opacity: 1;
   }
+}
+
+/* HubSpot embedded form, restyled to match the site's black & white forms. */
+.hs-form-frame form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.hs-form-frame .hs-form-field > label,
+.hs-form-frame fieldset legend {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-text);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #1a1a1a;
+}
+.hs-form-frame .hs-input {
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background: #fff;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  color: #000;
+}
+.hs-form-frame .hs-input:focus {
+  outline: none;
+  border-color: #000;
+  box-shadow: 0 0 0 1px #000;
+}
+.hs-form-frame textarea.hs-input {
+  resize: vertical;
+  min-height: 7rem;
+}
+.hs-form-frame .inputs-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.hs-form-frame .hs-button {
+  align-self: flex-start;
+  border: 1px solid #000;
+  background: #000;
+  color: #fff;
+  padding: 1rem 2rem;
+  font-family: var(--font-text);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.hs-form-frame .hs-button:hover {
+  background: #fff;
+  color: #000;
+}
+.hs-form-frame .hs-error-msg,
+.hs-form-frame .hs-error-msgs label {
+  color: #8a8a8a;
+  font-size: 0.8125rem;
 }
 
 /* Placeholder awaiting real content — must be unmistakably unshippable. */

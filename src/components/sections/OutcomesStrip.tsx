@@ -12,9 +12,28 @@ export default function OutcomesStrip() {
     revealChildren(el, { stagger: 0.05 })
   );
 
+  // One run of the six outcomes with trailing interpuncts; rendered twice
+  // (the second marked data-dup) for a seamless -50% loop.
+  const Run = ({ dup = false }: { dup?: boolean }) => (
+    <div
+      data-dup={dup || undefined}
+      aria-hidden={dup || undefined}
+      className="flex shrink-0 items-center"
+    >
+      {outcomes.list.map((o) => (
+        <span key={o} className="flex items-center whitespace-nowrap">
+          <span className="text-eyebrow uppercase text-ink">{o}</span>
+          <span aria-hidden="true" className="mx-8 text-muted">
+            ·
+          </span>
+        </span>
+      ))}
+    </div>
+  );
+
   return (
     <section ref={ref} className="border-y border-rule bg-paper">
-      <div className="mx-auto max-w-site px-6 py-24 text-center md:px-10 md:py-32">
+      <div className="mx-auto max-w-site px-6 pb-14 pt-24 text-center md:px-10 md:pb-16 md:pt-32">
         <p className="gsap-reveal text-eyebrow uppercase text-muted">
           {outcomes.eyebrow}
         </p>
@@ -24,15 +43,16 @@ export default function OutcomesStrip() {
         <p className="gsap-reveal mx-auto mt-6 max-w-measure text-body-lg text-ash">
           {outcomes.intro}
         </p>
-        {/* Flex-wrap so the line breaks between items at any width; each
-            label stays intact (nowrap). Gap spacing separates them — no
-            trailing interpuncts hanging at line ends when they stack. */}
-        <div className="gsap-reveal mx-auto mt-10 flex max-w-4xl flex-wrap items-center justify-center gap-x-7 gap-y-3 text-eyebrow uppercase text-ink">
-          {outcomes.list.map((o) => (
-            <span key={o} className="whitespace-nowrap">
-              {o}
-            </span>
-          ))}
+      </div>
+      {/* Animated horizontal ticker of the six outcomes. */}
+      <div
+        className="gsap-reveal ticker-wrap pb-24 md:pb-32"
+        role="marquee"
+        aria-label="The six outcomes every MJI activity must produce"
+      >
+        <div className="ticker">
+          <Run />
+          <Run dup />
         </div>
       </div>
     </section>

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import InquiryForm, { type Row } from "@/components/forms/InquiryForm";
+import HubSpotForm from "@/components/forms/HubSpotForm";
+import { HUBSPOT, hasHubSpotForm } from "@/lib/hubspot";
 import { socialProof } from "@/lib/copy";
 
 export const metadata: Metadata = {
@@ -36,7 +38,11 @@ export default function DonatePage() {
         <p className="mt-6 max-w-measure text-body-lg text-ash">
           Anyone who believes in the mission can give. {socialProof.accountability}
         </p>
-        <InquiryForm rows={rows} submitLabel="Give toward impact" />
+        {hasHubSpotForm("donate") ? (
+          <HubSpotForm formId={HUBSPOT.forms.donate} />
+        ) : (
+          <InquiryForm rows={rows} submitLabel="Give toward impact" />
+        )}
         <p className="mt-8 text-xs text-muted">
           Secure payment is connected before launch. In the meantime, submitting
           lets us reach out with giving details. (TODO)

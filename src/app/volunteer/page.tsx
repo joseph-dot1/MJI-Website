@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import InquiryForm, { type Row } from "@/components/forms/InquiryForm";
+import HubSpotForm from "@/components/forms/HubSpotForm";
+import { HUBSPOT, hasHubSpotForm } from "@/lib/hubspot";
 
 export const metadata: Metadata = {
   title: "Volunteer · My Journey Inc.",
@@ -49,7 +51,11 @@ export default function VolunteerPage() {
           Every volunteer is developed into a leader. Applications are assessed
           on the 4 Cs: Character, Capacity, Commitment, and Consistency.
         </p>
-        <InquiryForm rows={rows} submitLabel="Apply to volunteer" />
+        {hasHubSpotForm("volunteer") ? (
+          <HubSpotForm formId={HUBSPOT.forms.volunteer} />
+        ) : (
+          <InquiryForm rows={rows} submitLabel="Apply to volunteer" />
+        )}
       </div>
     </main>
   );

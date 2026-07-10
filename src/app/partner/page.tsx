@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import InquiryForm, { type Row } from "@/components/forms/InquiryForm";
+import HubSpotForm from "@/components/forms/HubSpotForm";
+import { HUBSPOT, hasHubSpotForm } from "@/lib/hubspot";
 
 export const metadata: Metadata = {
   title: "Partner With MJI · My Journey Inc.",
@@ -51,7 +53,11 @@ export default function PartnerPage() {
           MJI works with institutions shaping young Nigerians. Tell us about
           your organization and we’ll be in touch.
         </p>
-        <InquiryForm rows={rows} submitLabel="Start a partnership" />
+        {hasHubSpotForm("partner") ? (
+          <HubSpotForm formId={HUBSPOT.forms.partner} />
+        ) : (
+          <InquiryForm rows={rows} submitLabel="Start a partnership" />
+        )}
       </div>
     </main>
   );

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import RegisterForm from "./RegisterForm";
+import HubSpotForm from "@/components/forms/HubSpotForm";
+import { HUBSPOT, hasHubSpotForm } from "@/lib/hubspot";
 
 export const metadata: Metadata = {
   title: "Start My Journey · My Journey Inc.",
@@ -21,7 +23,11 @@ export default function RegisterPage() {
           Two minutes, free. Once your application is reviewed, you’ll be
           welcomed into the community and walked through orientation.
         </p>
-        <RegisterForm />
+        {hasHubSpotForm("register") ? (
+          <HubSpotForm formId={HUBSPOT.forms.register} />
+        ) : (
+          <RegisterForm />
+        )}
       </div>
     </main>
   );
